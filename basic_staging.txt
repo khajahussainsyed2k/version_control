@@ -1,0 +1,156 @@
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ echo 2 > hello.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git diff
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git diff --staged
+diff --git a/hello.txt b/hello.txt
+deleted file mode 100644
+index d724514..0000000
+--- a/hello.txt
++++ /dev/null
+@@ -1 +0,0 @@
+-hi  syed khaja hussain here
+\ No newline at end of file
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git add hello.txt
+warning: LF will be replaced by CRLF in hello.txt.
+The file will have its original line endings in your working directory
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git diff
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git diff --staged
+diff --git a/hello.txt b/hello.txt
+index d724514..0cfbf08 100644
+--- a/hello.txt
++++ b/hello.txt
+@@ -1 +1 @@
+-hi  syed khaja hussain here
+\ No newline at end of file
++2
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ echo 3 > hello.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git diff
+warning: LF will be replaced by CRLF in hello.txt.
+The file will have its original line endings in your working directory
+diff --git a/hello.txt b/hello.txt
+index 0cfbf08..00750ed 100644
+--- a/hello.txt
++++ b/hello.txt
+@@ -1 +1 @@
+-2
++3
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git diff --staged
+diff --git a/hello.txt b/hello.txt
+index d724514..0cfbf08 100644
+--- a/hello.txt
++++ b/hello.txt
+@@ -1 +1 @@
+-hi  syed khaja hussain here
+\ No newline at end of file
++2
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   hello.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello.txt
+
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git restore --staged hello.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git add hello.txt
+warning: LF will be replaced by CRLF in hello.txt.
+The file will have its original line endings in your working directory
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git commit -m "step 15"
+[master 9180434] step 15
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ echo 4 > hello.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git show
+commit 91804340053f73705a5463fbc4b21e04ecb13bb6 (HEAD -> master)
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Wed Jan 12 14:57:11 2022 +0530
+
+    step 15
+
+diff --git a/hello.txt b/hello.txt
+index d724514..00750ed 100644
+--- a/hello.txt
++++ b/hello.txt
+@@ -1 +1 @@
+-hi  syed khaja hussain here
+\ No newline at end of file
++3
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git restore hello.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git show
+commit 91804340053f73705a5463fbc4b21e04ecb13bb6 (HEAD -> master)
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Wed Jan 12 14:57:11 2022 +0530
+
+    step 15
+
+diff --git a/hello.txt b/hello.txt
+index d724514..00750ed 100644
+--- a/hello.txt
++++ b/hello.txt
+@@ -1 +1 @@
+-hi  syed khaja hussain here
+\ No newline at end of file
++3
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$
