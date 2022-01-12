@@ -1,0 +1,200 @@
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop (4th)
+$ mkdir testRepo
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop (4th)
+$ cd testRepo
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (4th)
+$ git init
+Initialized empty Git repository in C:/Users/HP/OneDrive/Desktop/testRepo/.git/
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (master)
+$ la -la
+bash: la: command not found
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (master)
+$ ls -la
+total 28
+drwxr-xr-x 1 HP 197121 0 Jan 12 20:42 ./
+drwxr-xr-x 1 HP 197121 0 Jan 12 20:41 ../
+drwxr-xr-x 1 HP 197121 0 Jan 12 20:42 .git/
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (master)
+$ touch file1.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (master)
+$ vi file1.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (master)
+$ git add file1.txt
+warning: LF will be replaced by CRLF in file1.txt.
+The file will have its original line endings in your working directory
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   file1.txt
+
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (master)
+$ git commit -m "file 1"
+[master (root-commit) 4879f72] file 1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file1.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (master)
+$ touch file2.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (master)
+$ vi file2.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (master)
+$ git add file2.txt
+warning: LF will be replaced by CRLF in file2.txt.
+The file will have its original line endings in your working directory
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (master)
+$ git commit -m "file2"
+[master d638066] file2
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file2.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (master)
+$ git branch dev
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (master)
+$ git branch
+  dev
+* master
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (master)
+$ git checkout dev
+Switched to branch 'dev'
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (dev)
+$ touch file5.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (dev)
+$ vi file5.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (dev)
+$ git add file5.txt
+warning: LF will be replaced by CRLF in file5.txt.
+The file will have its original line endings in your working directory
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (dev)
+$ git commit -m "file5"
+[dev 0170c2c] file5
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file5.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (dev)
+$ touch file6.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (dev)
+$ vi file6.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (dev)
+$ git add file6.txt
+warning: LF will be replaced by CRLF in file6.txt.
+The file will have its original line endings in your working directory
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (dev)
+$ git commit -m "file6"
+[dev 7a8b9b1] file6
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file6.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (dev)
+$ git checkout master
+Switched to branch 'master'
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (master)
+$ touch file3.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (master)
+$ vi file3.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (master)
+$ git add file3.txt
+warning: LF will be replaced by CRLF in file3.txt.
+The file will have its original line endings in your working directory
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (master)
+$ git commit -m "file3"
+[master f3baa53] file3
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file3.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (master)
+$ touch file4.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (master)
+$ vi file4.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (master)
+$ git add file4.txt
+warning: LF will be replaced by CRLF in file4.txt.
+The file will have its original line endings in your working directory
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (master)
+$ git commit -m "file4"
+[master eb7d451] file4
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file4.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (master)
+$ git merge dev
+Merge made by the 'ort' strategy.
+ file5.txt | 1 +
+ file6.txt | 1 +
+ 2 files changed, 2 insertions(+)
+ create mode 100644 file5.txt
+ create mode 100644 file6.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (master)
+$ git log
+commit 22c7694cfb3078fdb3dc6f2111fbe0868dbf9a3b (HEAD -> master)
+Merge: eb7d451 7a8b9b1
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Wed Jan 12 21:14:38 2022 +0530
+
+    Merge branch 'dev'
+
+commit eb7d4518754cb345fb2a5bfb6273e91af9d96560
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Wed Jan 12 21:11:50 2022 +0530
+
+    file4
+
+commit f3baa53752b657d9a3b195556d5d38579936144b
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Wed Jan 12 21:10:53 2022 +0530
+
+    file3
+
+commit 7a8b9b11631eabfd24746b8a04480cacf5a8ea4c (dev)
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Wed Jan 12 21:09:11 2022 +0530
+
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/testRepo (master)
+$
