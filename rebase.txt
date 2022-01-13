@@ -1,0 +1,175 @@
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop (4th)
+$ cd 7
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7 (4th)
+$ git init
+Initialized empty Git repository in C:/Users/HP/OneDrive/Desktop/7/.git/
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7 (master)
+$ git add .
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7 (master)
+$ git commit -m "master 1"
+[master (root-commit) 0e84da4] master 1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7 (master)
+$ vi file.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7 (master)
+$ git add .
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7 (master)
+$ git commit -m "m2"
+[master 530c4d4] m2
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7 (master)
+$ git branch feature
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7 (master)
+$ git branch
+  feature
+* master
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7 (master)
+$ git checkout feature
+Switched to branch 'feature'
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7 (feature)
+$ vi file.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7 (feature)
+$ git add .
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7 (feature)
+$ git commit -m "f1"
+[feature 6dcc4a6] f1
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7 (feature)
+$ git log
+commit 6dcc4a6413bfbd961004784501f36eb3ad45d19b (HEAD -> feature)
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Thu Jan 13 09:55:21 2022 +0530
+
+    f1
+
+commit 530c4d475eade877edc21ef7216911a4d4a87913 (master)
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Thu Jan 13 09:50:30 2022 +0530
+
+    m2
+
+commit 0e84da48d3bebe92943ec4c6cc2e5ff94db1b356
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Thu Jan 13 09:28:20 2022 +0530
+
+    master 1
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7 (feature)
+$ git status
+On branch feature
+nothing to commit, working tree clean
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7 (feature)
+$ vi file.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7 (feature)
+$ git add .
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7 (feature)
+$ git commit -m "f2"
+[feature 3e0a056] f2
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7 (feature)
+$ git rebase master
+Current branch feature is up to date.
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7 (feature)
+$ git checkout master
+Switched to branch 'master'
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7 (master)
+$ git rebase feature
+Successfully rebased and updated refs/heads/master.
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7 (master)
+$ git log
+commit 3e0a05681f3dc97083160ebf396170c1bff8f04f (HEAD -> master, feature)
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Thu Jan 13 09:57:19 2022 +0530
+
+    f2
+
+commit 6dcc4a6413bfbd961004784501f36eb3ad45d19b
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Thu Jan 13 09:55:21 2022 +0530
+
+    f1
+
+commit 530c4d475eade877edc21ef7216911a4d4a87913
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Thu Jan 13 09:50:30 2022 +0530
+
+    m2
+
+commit 0e84da48d3bebe92943ec4c6cc2e5ff94db1b356
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Thu Jan 13 09:28:20 2022 +0530
+
+    master 1
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7 (master)
+$ git checkout feature
+Switched to branch 'feature'
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7 (feature)
+$ git log
+commit 3e0a05681f3dc97083160ebf396170c1bff8f04f (HEAD -> feature, master)
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Thu Jan 13 09:57:19 2022 +0530
+
+    f2
+
+commit 6dcc4a6413bfbd961004784501f36eb3ad45d19b
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Thu Jan 13 09:55:21 2022 +0530
+
+    f1
+
+commit 530c4d475eade877edc21ef7216911a4d4a87913
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Thu Jan 13 09:50:30 2022 +0530
+
+    m2
+
+commit 0e84da48d3bebe92943ec4c6cc2e5ff94db1b356
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Thu Jan 13 09:28:20 2022 +0530
+
+    master 1
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7 (feature)
+$
