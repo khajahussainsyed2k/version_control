@@ -1,0 +1,77 @@
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   test.c
+
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git log -p
+commit 91804340053f73705a5463fbc4b21e04ecb13bb6 (HEAD -> master)
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Wed Jan 12 14:57:11 2022 +0530
+
+    step 15
+
+diff --git a/hello.txt b/hello.txt
+index d724514..00750ed 100644
+--- a/hello.txt
++++ b/hello.txt
+@@ -1 +1 @@
+-hi  syed khaja hussain here
+\ No newline at end of file
++3
+
+commit 35e526f14b7c32eaf801bb127930a494bddeecf8
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Wed Jan 12 14:32:02 2022 +0530
+
+    basic commits
+
+diff --git a/basic_commits.txt b/basic_commits.txt
+new file mode 100644
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git commit --amend
+[master 53c7188] ammend
+ Date: Wed Jan 12 14:57:11 2022 +0530
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+ create mode 100644 test.c
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git log -p
+commit 53c7188104a5f4bdf918f3b7d78fc415b3f0be40 (HEAD -> master)
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Wed Jan 12 14:57:11 2022 +0530
+
+    ammend
+
+diff --git a/hello.txt b/hello.txt
+index d724514..00750ed 100644
+--- a/hello.txt
++++ b/hello.txt
+@@ -1 +1 @@
+-hi  syed khaja hussain here
+\ No newline at end of file
++3
+diff --git a/test.c b/test.c
+new file mode 100644
+index 0000000..e7fe18e
+--- /dev/null
++++ b/test.c
+@@ -0,0 +1 @@
++dgdfh:
+
+commit 35e526f14b7c32eaf801bb127930a494bddeecf8
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git commit --amend
+[master fc198f4] ammend2
+ Date: Wed Jan 12 14:57:11 2022 +0530
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+ create mode 100644 test.c
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$
