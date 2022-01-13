@@ -1,0 +1,101 @@
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ ls -R
+.:
+basic_branching.txt  basic_commits.txt  file2.txt  hello.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git clean -n
+Would remove basic_branching.txt
+Would remove file2.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ ls
+basic_branching.txt  basic_commits.txt  file2.txt  hello.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ ls -R
+.:
+basic_branching.txt  basic_commits.txt  file2.txt  hello.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ vi test.c
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ ls
+basic_branching.txt  basic_commits.txt  file2.txt  hello.txt  test.c
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git clean -n
+Would remove basic_branching.txt
+Would remove file2.txt
+Would remove test.c
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ ls
+basic_branching.txt  basic_commits.txt  file2.txt  hello.txt  test.c
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git clean -n -d
+Would remove basic_branching.txt
+Would remove file2.txt
+Would remove test.c
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        basic_branching.txt
+        file2.txt
+        test.c
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git add test.c
+warning: LF will be replaced by CRLF in test.c.
+The file will have its original line endings in your working directory
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git clean -n -d
+Would remove basic_branching.txt
+Would remove file2.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ ls
+basic_branching.txt  basic_commits.txt  file2.txt  hello.txt  test.c
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git clean -f -d
+Removing basic_branching.txt
+Removing file2.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git log
+commit 91804340053f73705a5463fbc4b21e04ecb13bb6 (HEAD -> master)
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Wed Jan 12 14:57:11 2022 +0530
+
+    step 15
+
+commit 35e526f14b7c32eaf801bb127930a494bddeecf8
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Wed Jan 12 14:32:02 2022 +0530
+
+    basic commits
+
+commit 74d1830dc7c0093867d8b3bbada16dc92055a908
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Wed Jan 12 14:28:56 2022 +0530
+
+     step 16
+
+commit 64d026031ec8251c2a6ccdab376a22bf4478afd6
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Wed Jan 12 14:27:12 2022 +0530
+
+    step 14
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ ls
+basic_commits.txt  hello.txt  test.c
