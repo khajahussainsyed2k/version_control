@@ -1,0 +1,75 @@
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7.1 (master|REVERTING)
+$ vi file.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7.1 (master|REVERTING)
+$ git revert f271f14f838d64d86ee7e83c731f55d651ba695c
+error: Reverting is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: revert failed
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7.1 (master|REVERTING)
+$ git revert --abort
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7.1 (master)
+$ git log --decorate --oneline
+fbfdafb (HEAD -> master) 2
+f271f14 1
+3e7a9ff (hi/rebase, rebase) rebase
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7.1 (master)
+$ cat file.txt
+hiiiii,everyone
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7.1 (master)
+$ git revert
+usage: git revert [<options>] <commit-ish>...
+   or: git revert <subcommand>
+
+    --quit                end revert or cherry-pick sequence
+    --continue            resume revert or cherry-pick sequence
+    --abort               cancel revert or cherry-pick sequence
+    --skip                skip current commit and continue
+    --cleanup <mode>      how to strip spaces and #comments from message
+    -n, --no-commit       don't automatically commit
+    -e, --edit            edit the commit message
+    -s, --signoff         add a Signed-off-by trailer
+    -m, --mainline <parent-number>
+                          select mainline parent
+    --rerere-autoupdate   update the index with reused conflict resolution if possible
+    --strategy <strategy>
+                          merge strategy
+    -X, --strategy-option <option>
+                          option for merge strategy
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7.1 (master)
+$ git log --decorate --oneline
+fbfdafb (HEAD -> master) 2
+f271f14 1
+3e7a9ff (hi/rebase, rebase) rebase
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7.1 (master)
+$ git revert fbfdafb
+[master 9fe9553] Revert "2"
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7.1 (master)
+$ git log --decorate --oneline
+9fe9553 (HEAD -> master) Revert "2"
+fbfdafb 2
+f271f14 1
+3e7a9ff (hi/rebase, rebase) rebase
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7.1 (master)
+$ cat file.txt
+hiiiii
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7.1 (master)
+$ ls
+file.txt  rebase.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/7.1 (master)
+$
