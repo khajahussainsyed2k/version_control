@@ -1,0 +1,142 @@
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/6.1 (4th)
+$ git init
+Initialized empty Git repository in C:/Users/HP/OneDrive/Desktop/6.1/.git/
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/6.1 (master)
+$ git branch
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/6.1 (master)
+$ git add .
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/6.1 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   myinfo.txt
+
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/6.1 (master)
+$ git branch
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/6.1 (master)
+$ git commit -m "f"
+[master (root-commit) ecbfede] f
+ 1 file changed, 4 insertions(+)
+ create mode 100644 myinfo.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/6.1 (master)
+$ git branch
+* master
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/6.1 (master)
+$ git branch dev1branch
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/6.1 (master)
+$ git branch
+  dev1branch
+* master
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/6.1 (master)
+$ git checkout dev1branch
+Switched to branch 'dev1branch'
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/6.1 (dev1branch)
+$ ls
+myinfo.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/6.1 (dev1branch)
+$ vi myinfo.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/6.1 (dev1branch)
+$ git status
+On branch dev1branch
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   myinfo.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/6.1 (dev1branch)
+$ git add .
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/6.1 (dev1branch)
+$ git status
+On branch dev1branch
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   myinfo.txt
+
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/6.1 (dev1branch)
+$ git commit -m "updated my ino"
+[dev1branch 91a9188] updated my ino
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/6.1 (dev1branch)
+$ git status
+On branch dev1branch
+nothing to commit, working tree clean
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/6.1 (dev1branch)
+$ git checkout master
+Switched to branch 'master'
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/6.1 (master)
+$ vi myinfo.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/6.1 (master)
+$ git add myinfo.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/6.1 (master)
+$ git commit -m "add"
+[master 09efdd3] add
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/6.1 (master)
+$ git merge dev1branch
+Auto-merging myinfo.txt
+CONFLICT (content): Merge conflict in myinfo.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/6.1 (master|MERGING)
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   myinfo.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/6.1 (master|MERGING)
+$ vi myinfo.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/6.1 (master|MERGING)
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   myinfo.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/6.1 (master|MERGING)
+$ git add .
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/6.1 (master|MERGING)
+$ git commit -m "after merge"
+[master 975b071] after merge
+
