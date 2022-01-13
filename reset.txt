@@ -1,0 +1,175 @@
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop (4th)
+$ cd practice_vc
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ ls
+basic_branching.txt  basic_commits.txt  basic_staging.txt  file2.txt  hello.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git log
+commit 351c8165be3856794b8929c5fe3480609ebab118 (HEAD -> master)
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Wed Jan 12 17:10:50 2022 +0530
+
+     basic branching
+
+commit e193a52d700c46a35c40bcd12aa32788f1f6796e
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Wed Jan 12 16:40:39 2022 +0530
+
+    14
+
+commit 465116b8a74135d9e22cd2fc12b1c59e81c6962e
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Wed Jan 12 15:31:42 2022 +0530
+
+    basic staging
+
+commit 91804340053f73705a5463fbc4b21e04ecb13bb6
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Wed Jan 12 14:57:11 2022 +0530
+
+    step 15
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git reset --soft HEAD~1
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ ls
+basic_branching.txt  basic_commits.txt  basic_staging.txt  file2.txt  hello.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git log
+commit e193a52d700c46a35c40bcd12aa32788f1f6796e (HEAD -> master)
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Wed Jan 12 16:40:39 2022 +0530
+
+    14
+
+commit 465116b8a74135d9e22cd2fc12b1c59e81c6962e
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Wed Jan 12 15:31:42 2022 +0530
+
+    basic staging
+
+commit 91804340053f73705a5463fbc4b21e04ecb13bb6
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Wed Jan 12 14:57:11 2022 +0530
+
+    step 15
+
+commit 35e526f14b7c32eaf801bb127930a494bddeecf8
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Wed Jan 12 14:32:02 2022 +0530
+
+    basic commits
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   basic_branching.txt
+
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git reset --mixed HEAD~1
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ ls
+basic_branching.txt  basic_commits.txt  basic_staging.txt  file2.txt  hello.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git log
+commit 465116b8a74135d9e22cd2fc12b1c59e81c6962e (HEAD -> master)
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Wed Jan 12 15:31:42 2022 +0530
+
+    basic staging
+
+commit 91804340053f73705a5463fbc4b21e04ecb13bb6
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Wed Jan 12 14:57:11 2022 +0530
+
+    step 15
+
+commit 35e526f14b7c32eaf801bb127930a494bddeecf8
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Wed Jan 12 14:32:02 2022 +0530
+
+    basic commits
+
+commit 74d1830dc7c0093867d8b3bbada16dc92055a908
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Wed Jan 12 14:28:56 2022 +0530
+
+     step 16
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        basic_branching.txt
+        file2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git reset --hard HEAD~1
+HEAD is now at 9180434 step 15
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ ls
+basic_branching.txt  basic_commits.txt  file2.txt  hello.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git log
+commit 91804340053f73705a5463fbc4b21e04ecb13bb6 (HEAD -> master)
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Wed Jan 12 14:57:11 2022 +0530
+
+    step 15
+
+commit 35e526f14b7c32eaf801bb127930a494bddeecf8
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Wed Jan 12 14:32:02 2022 +0530
+
+    basic commits
+
+commit 74d1830dc7c0093867d8b3bbada16dc92055a908
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Wed Jan 12 14:28:56 2022 +0530
+
+     step 16
+
+commit 64d026031ec8251c2a6ccdab376a22bf4478afd6
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Wed Jan 12 14:27:12 2022 +0530
+
+    step 14
+
+commit d16232d0b66279da24006fd1db2d339da02c6887
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Wed Jan 12 14:24:39 2022 +0530
+
+    first commit
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        basic_branching.txt
+        file2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$
