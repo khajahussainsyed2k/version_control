@@ -1,0 +1,254 @@
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ vi bug.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        bug.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ vi bug2.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git add bug2.txt
+warning: LF will be replaced by CRLF in bug2.txt.
+The file will have its original line endings in your working directory
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   bug2.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        bug.txt
+
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git log --oneline
+ddb56c0 (HEAD -> master) ammend2
+ef38d92 (origin/mybranch) step 10
+465116b basic staging
+9180434 step 15
+35e526f basic commits
+74d1830  step 16
+64d0260 step 14
+d16232d first commit
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git stash
+Saved working directory and index state WIP on master: ddb56c0 ammend2
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        bug.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git log --oneline
+ddb56c0 (HEAD -> master) ammend2
+ef38d92 (origin/mybranch) step 10
+465116b basic staging
+9180434 step 15
+35e526f basic commits
+74d1830  step 16
+64d0260 step 14
+d16232d first commit
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git commit -m "debugging done"
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        bug.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git log --oneline
+ddb56c0 (HEAD -> master) ammend2
+ef38d92 (origin/mybranch) step 10
+465116b basic staging
+9180434 step 15
+35e526f basic commits
+74d1830  step 16
+64d0260 step 14
+d16232d first commit
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git stash pop
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   bug2.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        bug.txt
+
+Dropped refs/stash@{0} (f9299aa03e48800c40266bf2dcd19ed6aa2b26df)
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   bug2.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        bug.txt
+
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git commit -m "bug fixed"
+[master a7d1de6] bug fixed
+ 1 file changed, 1 insertion(+)
+ create mode 100644 bug2.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git stash branch master
+No stash entries found.
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git stash
+No local changes to save
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git add bug.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git stash
+Saved working directory and index state WIP on master: a7d1de6 bug fixed
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git stash branch master
+fatal: A branch named 'master' already exists.
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git stash master
+fatal: unknown subcommand: master
+
+usage: git stash list [<options>]
+   or: git stash show [<options>] [<stash>]
+   or: git stash drop [-q|--quiet] [<stash>]
+   or: git stash ( pop | apply ) [--index] [-q|--quiet] [<stash>]
+   or: git stash branch <branchname> [<stash>]
+   or: git stash clear
+   or: git stash [push [-p|--patch] [-k|--[no-]keep-index] [-q|--quiet]
+                 [-u|--include-untracked] [-a|--all] [-m|--message <message>]
+                 [--pathspec-from-file=<file> [--pathspec-file-nul]]
+                 [--] [<pathspec>...]]
+   or: git stash save [-p|--patch] [-k|--[no-]keep-index] [-q|--quiet]
+                 [-u|--include-untracked] [-a|--all] [<message>]
+
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git log --oneline
+a7d1de6 (HEAD -> master) bug fixed
+ddb56c0 ammend2
+ef38d92 (origin/mybranch) step 10
+465116b basic staging
+9180434 step 15
+35e526f basic commits
+74d1830  step 16
+64d0260 step 14
+d16232d first commit
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git reset --hard HEAD
+HEAD is now at a7d1de6 bug fixed
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git log --oneline
+a7d1de6 (HEAD -> master) bug fixed
+ddb56c0 ammend2
+ef38d92 (origin/mybranch) step 10
+465116b basic staging
+9180434 step 15
+35e526f basic commits
+74d1830  step 16
+64d0260 step 14
+d16232d first commit
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git stash --index
+error: unknown option `index'
+usage: git stash [push [-p|--patch] [-k|--[no-]keep-index] [-q|--quiet]
+                 [-u|--include-untracked] [-a|--all] [-m|--message <message>]
+                 [--] [<pathspec>...]]
+
+    -k, --keep-index      keep index
+    -p, --patch           stash in patch mode
+    -q, --quiet           quiet mode
+    -u, --include-untracked
+                          include untracked files in stash
+    -a, --all             include ignore files
+    -m, --message <message>
+                          stash message
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git stash apply
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   bug.txt
+
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git commit -m "bug"
+[master 11683d1] bug
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 bug.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git reset --hard HEAD
+HEAD is now at 11683d1 bug
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git stash apply --index
+On branch master
+nothing to commit, working tree clean
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git log
+commit 11683d1c935b8f78c1cc3e9bb4db469274f8fff7 (HEAD -> master)
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Fri Jan 14 12:29:11 2022 +0530
+
+    bug
+
+commit a7d1de605f63a8cd2764b0caa391156981cc695a
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Fri Jan 14 12:22:55 2022 +0530
+
+    bug fixed
+
+commit ddb56c08209a2df3fc8c9545d0e38a5a534508ea
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Wed Jan 12 14:57:11 2022 +0530
+
+    ammend2
+
+commit ef38d92163feb4b565902b14d03de6f2ad87ca95 (origin/mybranch)
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Wed Jan 12 16:37:05 2022 +0530
+
+    step 10
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$
