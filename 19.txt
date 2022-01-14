@@ -1,0 +1,144 @@
+HP@DESKTOP-IU19D9D MINGW64 ~/OneDrive/Desktop/practice_vc (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@DESKTOP-IU19D9D MINGW64 ~/OneDrive/Desktop/practice_vc (master)
+$ git tag v1
+
+HP@DESKTOP-IU19D9D MINGW64 ~/OneDrive/Desktop/practice_vc (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@DESKTOP-IU19D9D MINGW64 ~/OneDrive/Desktop/practice_vc (master)
+$ git tag --list
+v1
+
+HP@DESKTOP-IU19D9D MINGW64 ~/OneDrive/Desktop/practice_vc (master)
+$ git log
+commit 3dc26d618eedc74301c2b7de37206072eef03e86 (HEAD -> master, tag: v1)
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Fri Jan 14 19:49:02 2022 +0530
+
+    fi
+
+commit ba9ee40ebe2459665fb0aeac982eb3fa5b8fb18b
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Fri Jan 14 16:14:17 2022 +0530
+
+    file1 commit
+
+commit 1c5be1090be00aae79814ed81d6666148af3c554
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Fri Jan 14 16:08:28 2022 +0530
+
+    .gitignore added
+
+commit 11683d1c935b8f78c1cc3e9bb4db469274f8fff7
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Fri Jan 14 12:29:11 2022 +0530
+
+    bug
+
+HP@DESKTOP-IU19D9D MINGW64 ~/OneDrive/Desktop/practice_vc (master)
+$ git remote -v
+origin  https://github.com/khajahussainsyed2k/version_control.git (fetch)
+origin  https://github.com/khajahussainsyed2k/version_control.git (push)
+
+HP@DESKTOP-IU19D9D MINGW64 ~/OneDrive/Desktop/practice_vc (master)
+$ git push --tags
+Enumerating objects: 21, done.
+Counting objects: 100% (21/21), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (19/19), 1.55 KiB | 397.00 KiB/s, done.
+Total 19 (delta 5), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (5/5), done.
+To https://github.com/khajahussainsyed2k/version_control.git
+ * [new tag]         v1 -> v1
+
+HP@DESKTOP-IU19D9D MINGW64 ~/OneDrive/Desktop/practice_vc (master)
+$ ls
+basic_commits.txt  bug.txt   file1.txt  file3.txt  hello.txt
+basic_staging.txt  bug2.txt  file2.txt  foo.s      test.c
+
+HP@DESKTOP-IU19D9D MINGW64 ~/OneDrive/Desktop/practice_vc (master)
+$ vi file2.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/OneDrive/Desktop/practice_vc (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@DESKTOP-IU19D9D MINGW64 ~/OneDrive/Desktop/practice_vc (master)
+$ ls
+basic_commits.txt  bug.txt   file1.txt  file3.txt  hello.txt
+basic_staging.txt  bug2.txt  file2.txt  foo.s      test.c
+
+HP@DESKTOP-IU19D9D MINGW64 ~/OneDrive/Desktop/practice_vc (master)
+$ vi test.c
+
+HP@DESKTOP-IU19D9D MINGW64 ~/OneDrive/Desktop/practice_vc (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test.c
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@DESKTOP-IU19D9D MINGW64 ~/OneDrive/Desktop/practice_vc (master)
+$ git add .
+
+HP@DESKTOP-IU19D9D MINGW64 ~/OneDrive/Desktop/practice_vc (master)
+$ git commit -m "test"
+[master 57f7953] test
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+HP@DESKTOP-IU19D9D MINGW64 ~/OneDrive/Desktop/practice_vc (master)
+$ git log
+commit 57f79534fb71e0fdba25eb99266942eefd19bd95 (HEAD -> master)
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Fri Jan 14 20:47:01 2022 +0530
+
+    test
+
+commit 3dc26d618eedc74301c2b7de37206072eef03e86 (tag: v1)
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Fri Jan 14 19:49:02 2022 +0530
+
+    fi
+
+commit ba9ee40ebe2459665fb0aeac982eb3fa5b8fb18b
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Fri Jan 14 16:14:17 2022 +0530
+
+    file1 commit
+
+commit 1c5be1090be00aae79814ed81d6666148af3c554
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Fri Jan 14 16:08:28 2022 +0530
+
+    .gitignore added
+
+HP@DESKTOP-IU19D9D MINGW64 ~/OneDrive/Desktop/practice_vc (master)
+$ git log --oneline
+57f7953 (HEAD -> master) test
+3dc26d6 (tag: v1) fi
+ba9ee40 file1 commit
+1c5be10 .gitignore added
+11683d1 bug
+a7d1de6 bug fixed
+ddb56c0 ammend2
+ef38d92 (origin/mybranch) step 10
+465116b basic staging
+9180434 step 15
+35e526f basic commits
+74d1830  step 16
+64d0260 step 14
+d16232d first commit
+
+HP@DESKTOP-IU19D9D MINGW64 ~/OneDrive/Desktop/practice_vc (master)
+$
