@@ -1,0 +1,71 @@
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop (4th)
+$ cd practice_vc
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git log --oneline --graph
+* fc198f4 (HEAD -> master) ammend2
+* 35e526f basic commits
+* 74d1830  step 16
+* 64d0260 step 14
+* d16232d first commit
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git reflog
+fc198f4 (HEAD -> master) HEAD@{0}: commit (amend): ammend2
+53c7188 HEAD@{1}: commit (amend): ammend
+9180434 HEAD@{2}: reset: moving to HEAD~1
+465116b HEAD@{3}: reset: moving to HEAD~1
+e193a52 HEAD@{4}: reset: moving to HEAD~1
+351c816 HEAD@{5}: checkout: moving from mybranch to master
+ef38d92 (origin/mybranch, mybranch) HEAD@{6}: checkout: moving from master to mybranch
+351c816 HEAD@{7}: commit: basic branching
+e193a52 HEAD@{8}: commit: 14
+465116b HEAD@{9}: checkout: moving from mybranch to master
+ef38d92 (origin/mybranch, mybranch) HEAD@{10}: commit: step 10
+465116b HEAD@{11}: checkout: moving from master to mybranch
+465116b HEAD@{12}: checkout: moving from mybranch to master
+465116b HEAD@{13}: checkout: moving from master to mybranch
+465116b HEAD@{14}: reset: moving to HEAD
+465116b HEAD@{15}: reset: moving to HEAD
+465116b HEAD@{16}: commit: basic staging
+9180434 HEAD@{17}: reset: moving to HEAD
+9180434 HEAD@{18}: commit: step 15
+35e526f HEAD@{19}: commit: basic commits
+74d1830 HEAD@{20}: commit: step 16
+64d0260 HEAD@{21}: commit: step 14
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git rebase -i
+There is no tracking information for the current branch.
+Please specify which branch you want to rebase against.
+See git-rebase(1) for details.
+
+    git rebase '<branch>'
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=<remote>/<branch> master
+
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git branch
+* master
+  mybranch
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git rebase mybranch
+Successfully rebased and updated refs/heads/master.
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git log --oneline --graph
+* ddb56c0 (HEAD -> master) ammend2
+* ef38d92 (origin/mybranch, mybranch) step 10
+* 465116b basic staging
+* 9180434 step 15
+* 35e526f basic commits
+* 74d1830  step 16
+* 64d0260 step 14
+* d16232d first commit
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$
