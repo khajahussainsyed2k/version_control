@@ -1,0 +1,79 @@
+HP@DESKTOP-IU19D9D MINGW64 ~/OneDrive/Desktop/git-katas/submodules/exercise (master)
+$ git init
+Initialized empty Git repository in C:/Users/HP/OneDrive/Desktop/git-katas/submodules/exercise/.git/
+
+HP@DESKTOP-IU19D9D MINGW64 ~/OneDrive/Desktop/git-katas/submodules/exercise (master)
+$ vi file1.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/OneDrive/Desktop/git-katas/submodules/exercise (master)
+$ git add .
+
+HP@DESKTOP-IU19D9D MINGW64 ~/OneDrive/Desktop/git-katas/submodules/exercise (master)
+$ git commit -m "file1"
+[master (root-commit) 403d8a1] file1
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file1.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/OneDrive/Desktop/git-katas/submodules/exercise (master)
+$ cd ..
+
+HP@DESKTOP-IU19D9D MINGW64 ~/OneDrive/Desktop/git-katas/submodules (master)
+$ git add .
+warning: adding embedded git repository: submodules/exercise
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint:
+hint:   git submodule add <url> submodules/exercise
+hint:
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint:
+hint:   git rm --cached submodules/exercise
+hint:
+hint: See "git help submodule" for more information.
+
+HP@DESKTOP-IU19D9D MINGW64 ~/OneDrive/Desktop/git-katas/submodules (master)
+$ git submodule add 403d8a1
+fatal: repo URL: '403d8a1' must be absolute or begin with ./|../
+
+HP@DESKTOP-IU19D9D MINGW64 ~/OneDrive/Desktop/git-katas/submodules (master)
+$ git log
+fatal: your current branch 'master' does not have any commits yet
+
+HP@DESKTOP-IU19D9D MINGW64 ~/OneDrive/Desktop/git-katas/submodules (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   exercise
+
+
+HP@DESKTOP-IU19D9D MINGW64 ~/OneDrive/Desktop/git-katas/submodules (master)
+$ cd exercise
+
+HP@DESKTOP-IU19D9D MINGW64 ~/OneDrive/Desktop/git-katas/submodules/exercise (master)
+$ git log
+commit 403d8a1bf48b837c5df8440be0a829d3670cfc90 (HEAD -> master)
+Author: khaja <khajahussain.syed@zemosolabs.com>
+Date:   Fri Jan 14 19:26:23 2022 +0530
+
+    file1
+
+HP@DESKTOP-IU19D9D MINGW64 ~/OneDrive/Desktop/git-katas/submodules/exercise (master)
+$ git submodule add https://github.com/syedkhajahussain2k/vc.git
+Cloning into 'C:/Users/HP/OneDrive/Desktop/git-katas/submodules/exercise/vc'...
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 9 (delta 0), reused 9 (delta 0), pack-reused 0
+Receiving objects: 100% (9/9), done.
+warning: LF will be replaced by CRLF in .gitmodules.
+The file will have its original line endings in your working directory
+
+HP@DESKTOP-IU19D9D MINGW64 ~/OneDrive/Desktop/git-katas/submodules/exercise (master)
+$
