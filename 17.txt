@@ -1,0 +1,181 @@
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ vi foo.s
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        foo.s
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ vi .gitignore
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git add .gitignore
+warning: LF will be replaced by CRLF in .gitignore.
+The file will have its original line endings in your working directory
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git commit -m ".gitignore added"
+[master 1c5be10] .gitignore added
+ 1 file changed, 1 insertion(+)
+ create mode 100644 .gitignore
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ ls
+basic_commits.txt  bug.txt   file1.txt  hello.txt
+basic_staging.txt  bug2.txt  foo.s      test.c
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ cat file1.txt
+khaja
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ vi file1.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git add file1.txt
+warning: LF will be replaced by CRLF in file1.txt.
+The file will have its original line endings in your working directory
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git commit -m "file1 commit"
+[master ba9ee40] file1 commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ vi .gitignore
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        foo.s
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ vi file1.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+        modified:   file1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        foo.s
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ ls
+basic_commits.txt  bug.txt   file1.txt  hello.txt
+basic_staging.txt  bug2.txt  foo.s      test.c
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ vi file2.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+        modified:   file1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        foo.s
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git rm --cached
+fatal: No pathspec was given. Which files should I remove?
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git rm --cached file1.txt
+rm 'file1.txt'
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    file1.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        foo.s
+
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ vi file3.txt
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ vi .gitignore
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    file1.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file3.txt
+        foo.s
+
+
+HP@DESKTOP-IU19D9D MINGW64 ~/onedrive/desktop/practice_vc (master)
+$
+
